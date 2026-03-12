@@ -1,0 +1,70 @@
+name: AI Dev Stack
+version: 1.0.0
+schema: v1
+
+models:
+  # PRIMARY — Best free coding model (OpenRouter native provider)
+  - name: Qwen3 Coder
+    provider: openrouter
+    model: qwen/qwen3-coder:free
+    apiKey: YOUR_OPENROUTER_KEY
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      temperature: 0.4
+      maxTokens: 2000
+
+  # REASONING — DeepSeek free via OpenRouter
+  - name: Devstral Coder
+    provider: openrouter
+    model: mistralai/devstral-2512:free:free
+    apiKey: YOUR_OPENROUTER_KEY
+    roles:
+      - chat
+    defaultCompletionOptions:
+      temperature: 0.5
+      maxTokens: 2000
+
+  # FAST CHAT — Groq (fixed model ID)
+  - name: Llama Groq
+    provider: openai
+    apiBase: https://api.groq.com/openai/v1
+    model: llama-3.3-70b-versatile
+    apiKey: YOUR_GROQ_KEY
+    roles:
+      - chat
+      - autocomplete
+    autocompleteOptions:
+      debounceDelay: 200
+      maxPromptTokens: 1200
+      onlyMyCode: true
+    defaultCompletionOptions:
+      temperature: 0.6
+      maxTokens: 1500
+
+  # ─── LOCAL FALLBACK MODELS (Ollama — work offline, no API key needed) ─────────
+
+  # MAIN LOCAL FALLBACK — mirrors Qwen cloud model
+  - name: Ollama Qwen (offline)
+    provider: ollama
+    model: qwen2.5-coder:7b
+    roles:
+      - chat
+      - edit
+
+  # LOCAL CODER FALLBACK — mirrors DeepSeek cloud model
+  - name: Ollama DeepSeek (offline)
+    provider: ollama
+    model: deepseek-coder:6.7b
+    roles:
+      - apply
+      - autocomplete
+
+  # LOCAL DEBUGGER FALLBACK
+  - name: Ollama CodeLlama (offline)
+    provider: ollama
+    model: codellama:7b
+    roles:
+      - chat
