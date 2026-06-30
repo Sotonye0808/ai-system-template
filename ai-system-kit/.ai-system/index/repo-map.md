@@ -1,6 +1,11 @@
 # Repository Map
 
-> **Overview:** Visual map of the project folder structure with a brief description of each directory's purpose. Agents read this first when navigating the codebase. Updated whenever the folder structure changes.
+> **Metadata**
+> - last-updated-by: (set on first update)
+> - last-verified-against-code: (set after map review)
+> - staleness-policy: auto-regenerable — can be derived from `Get-ChildItem -Recurse` or `tree` command. Manual content only where intent cannot be derived from structure.
+
+> **Overview:** Visual map of the project folder structure with purpose descriptions. Updated when the folder structure changes. This file is **auto-regenerable** — use tool-based discovery (filesystem MCP, git ls-tree) for ground truth, and treat manual entries here as supplementary context, not primary navigation.
 
 ---
 
@@ -22,7 +27,7 @@ project-root/
 │   ├── controllers/        → Request handlers
 │   ├── services/           → Business logic layer
 │   ├── models/             → Database models / schemas
-│   ├── middleware/         → Express middleware
+│   ├── middleware/         → Middleware
 │   └── utils/              → Shared utilities
 │
 ├── config/                 → Configuration files

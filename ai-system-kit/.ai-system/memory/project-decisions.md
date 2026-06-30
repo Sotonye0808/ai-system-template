@@ -1,6 +1,11 @@
 # Project Decisions
 
-> **Overview:** Log of significant architectural, technical, and product decisions made during development. Agents consult this before proposing changes to avoid contradicting prior reasoning. Each entry records what was decided, why, and what the alternatives were.
+> **Metadata**
+> - last-updated-by: (set on first entry)
+> - last-verified-against-code: (set after decision review)
+> - staleness-policy: each entry has its own staleness — check supersedes links
+
+> **Overview:** Log of significant architectural, technical, and product decisions. Agents consult this before proposing changes to avoid contradicting prior reasoning. Uses supersedes/superseded-by links so contradictory entries are explicitly resolved rather than both appearing equally valid.
 
 ---
 
@@ -11,7 +16,9 @@
 
 **Decision:** [What was decided]
 **Date:** [YYYY-MM-DD]
-**Made by:** [Developer / AI agent / team]
+**Made by:** [Role / Agent / Developer]
+**Supersedes:** [link to any prior decision this replaces, or None]
+**Superseded by:** [link to any newer decision that replaces this, or None]
 
 **Reason:**
 [Why this choice was made]

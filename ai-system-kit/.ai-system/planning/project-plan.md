@@ -1,12 +1,15 @@
 # Project Plan
 
-> **Overview:** High-level feature checklist for the project. Agents update checkboxes as work is completed. Sections represent major development phases. See task-queue.md for granular, sprint-level tasks.
+> **Metadata**
+> - last-updated-by: (set on first update)
+> - last-verified-against-code: (set after plan review)
+> - staleness-policy: re-verify if project scope or phase changes
+
+> **Overview:** High-level feature checklist organized by development phase. See `planning/task-queue.md` for granular, sprint-level tasks.
 
 ---
 
 ## Phase 1 — Foundation
-
-> **Section summary:** Core infrastructure that everything else depends on.
 
 - [ ] Repository structure and folder conventions established
 - [ ] Configuration system implemented (env vars, config files)
@@ -18,8 +21,6 @@
 
 ## Phase 2 — Core Features
 
-> **Section summary:** The primary features that define the product's value.
-
 - [ ] [Feature 1]
 - [ ] [Feature 2]
 - [ ] [Feature 3]
@@ -28,16 +29,12 @@
 
 ## Phase 3 — Secondary Features
 
-> **Section summary:** Supporting features that enhance the core experience.
-
 - [ ] [Feature 4]
 - [ ] [Feature 5]
 
 ---
 
 ## Phase 4 — Quality & Polish
-
-> **Section summary:** Reliability, performance, and user experience improvements.
 
 - [ ] Unit test coverage for core modules
 - [ ] Integration tests for critical paths
@@ -49,8 +46,6 @@
 
 ## Phase 5 — Launch Preparation
 
-> **Section summary:** Final steps before production deployment.
-
 - [ ] Production environment configured
 - [ ] Security audit (auth, input validation, secrets)
 - [ ] Documentation complete
@@ -59,7 +54,5 @@
 ---
 
 ## Completed
-
-> **Section summary:** Features fully shipped. Archived here for reference.
 
 - [x] [Completed item]

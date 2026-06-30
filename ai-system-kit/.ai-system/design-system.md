@@ -1,12 +1,15 @@
 # Design System
 
-> **Overview:** [FILL IN — Describes the visual language, component patterns, and UX principles for this project. Agents building UI must read this before writing any frontend code.]
+> **Metadata**
+> - last-updated-by: (set on first run)
+> - last-verified-against-code: (set after visual audit)
+> - staleness-policy: re-verify if UI components or styling dependencies change
+
+> **Overview:** Visual language, component patterns, and UX principles. Agents building UI must read this before writing any frontend code.
 
 ---
 
 ## Visual Language
-
-> **Section summary:** Core visual identity — colours, typography, spacing.
 
 ### Colour Palette
 
@@ -26,9 +29,7 @@
 | Style | Font | Size | Weight |
 |-------|------|------|--------|
 | Heading 1 | [font] | [size] | [weight] |
-| Heading 2 | [font] | [size] | [weight] |
 | Body | [font] | [size] | [weight] |
-| Caption | [font] | [size] | [weight] |
 | Code | [font] | [size] | [weight] |
 
 ### Spacing Scale
@@ -39,38 +40,32 @@
 
 ## Component Patterns
 
-> **Section summary:** Standard UI components used across the project. New components should follow these patterns before inventing new ones.
-
 ### Buttons
-- Primary: [describe style and usage]
-- Secondary: [describe]
+- Primary: [style and usage]
+- Secondary: [style and usage]
 - Destructive: [describe]
 - Disabled state: [describe]
 
 ### Forms
 - Input fields: [style and validation rules]
 - Error messages: [placement and style]
-- Submit buttons: [loading state behaviour]
 
 ### Navigation
-- [describe nav pattern: sidebar / topnav / tabs]
+- [sidebar / topnav / tabs — describe pattern]
 
 ### Cards / Containers
-- [describe card pattern, shadow, border radius]
+- [shadow, border radius, padding]
 
 ### Modals / Dialogs
-- [describe pattern for confirmations, forms, alerts]
+- [confirmation, form-in-modal, alert patterns]
 
 ---
 
 ## UX Principles
 
-> **Section summary:** Guiding rules for how the interface should feel and behave.
-
 1. [e.g. Always show loading state for async actions]
 2. [e.g. Destructive actions require confirmation]
-3. [e.g. Error messages must explain what the user can do to fix the problem]
-4. [e.g. Mobile-first — all layouts must work at 320px wide]
+3. [e.g. Error messages must explain what the user can do]
 
 ---
 
@@ -78,16 +73,14 @@
 
 | Breakpoint | Value | Target |
 |------------|-------|--------|
-| sm | [e.g. 640px] | Mobile |
-| md | [e.g. 768px] | Tablet |
-| lg | [e.g. 1024px] | Desktop |
-| xl | [e.g. 1280px] | Wide screens |
+| sm | 640px | Mobile |
+| md | 768px | Tablet |
+| lg | 1024px | Desktop |
+| xl | 1280px | Wide screens |
 
 ---
 
 ## Accessibility Requirements
-
-> **Section summary:** Minimum accessibility standards to follow.
 
 - All interactive elements must have keyboard focus states
 - Colour contrast must meet WCAG AA (4.5:1 for text)

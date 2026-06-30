@@ -1,114 +1,100 @@
-# AI-Assisted Development Environment
+# AI-Assisted Development System (`.ai-system`)
 
 ## Overview
-This repository contains a complete setup for a free, powerful AI-assisted development workflow in VS Code, featuring:
 
-- **Copilot-style autocomplete** (Supermaven)
-- **AI chat + code editing** (Continue)
-- **Autonomous coding agent** (Cline)
-- **Repository intelligence** (Sourcegraph Amp)
-- **Offline fallback** (Ollama local models)
-- **Structured project documentation** (.ai-system)
+A vendor-neutral, model-agnostic framework for AI-assisted software development. Provides structured documentation, command-driven workflows, and quality gates that work identically across any AI coding tool — CLI, IDE extension, API loop, or autonomous agent.
 
-## Key Features
+## Philosophy
 
-### Core Components
-| Component | Purpose |
-|-----------|---------|
-| Supermaven | Always-on inline code completion |
-| Continue | AI coding assistant for planning and reasoning |
-| Cline | Autonomous agent for multi-file changes |
-| Sourcegraph Amp | Intelligent code search and navigation |
-| codebase-mcp | Provides structured repository context to AI tools |
-| Ollama | Local model fallback for offline work |
+- **No lock-in.** Roles are functions, not tools. No file names a specific AI product, vendor, or model.
+- **Context-budget resilience.** A tiered reading protocol means a 200k-context frontier model and a small fast model both get what they need — one from progressive disclosure, the other from the minimal always-read core.
+- **Closed-loop quality.** Every command runs through a mandatory QA gate before declaring work complete. No "should work" handoffs.
+- **Interruption-safe.** Checkpoint tracking means any session can be resumed after a crash, reset, or context switch.
+- **File-based state.** No external database — everything is Markdown with structured metadata, works in any repo with any toolchain.
 
-### Model Configuration
-The system uses a tiered approach to AI models:
-1. **Primary (Cloud):** Qwen3 Coder and DeepSeek via Together AI
-2. **Fast Chat:** Llama 3 70B via Groq
-3. **Offline Fallback:** Local models via Ollama (Qwen, DeepSeek, CodeLlama)
-
-## Getting Started
-
-### Installation
-1. Install VS Code extensions:
-   - Supermaven
-   - Continue
-   - Cline
-   - Sourcegraph Amp
-2. Set up free API keys:
-   - [Together AI](https://api.together.xyz)
-   - [Groq](https://console.groq.com)
-3. Install Ollama and download models:
-   ```bash
-   ollama pull qwen2.5-coder:7b
-   ollama pull deepseek-coder:6.7b
-   ollama pull codellama:7b
-   ```
-
-### Configuration
-1. Update `~/.continue/config.yaml` with your API keys
-2. Configure Cline to use OpenRouter/Qwen3 Coder
-3. Set up codebase-mcp for repository context
-
-## Workflow
-
-### Daily Usage
-1. Start services:
-   ```bash
-   ollama serve
-   codebase-mcp start
-   ```
-2. Run development cycle:
-   ```
-   Execute command: .ai-system/commands/dev-cycle.md
-   ```
-
-### Key Commands
-| Command | Purpose |
-|---------|---------|
-| `bootstrap-project.md` | Initialize .ai-system documentation |
-| `dev-cycle.md` | Full development workflow |
-| `plan-feature.md` | Plan new features |
-| `refactor-codebase.md` | Improve code structure |
-| `fix-build.md` | Diagnose and fix errors |
-
-## Project Structure
-The `.ai-system` directory maintains all AI-related documentation:
+## Directory Contract
 
 ```
 .ai-system/
-├── agents/               # Core agent instructions and protocols
-├── planning/             # Project plans and task queues
-├── commands/             # Reusable AI commands
-├── checkpoints/          # Session logs and progress tracking
-├── memory/               # Project decisions and lessons learned
-├── index/                # Repository maps and file summaries
-└── testing/              # Test results and repair systems
+├── protocols/          # How any agent behaves (entry, tiering, QA, escalation, verification)
+├── agents/             # Role definitions (function-based: Planner, Architect, Implementer, etc.)
+├── commands/           # Reusable command pipelines (execute-feature, dev-cycle, fix-build, etc.)
+├── system-architecture.md  # Structural docs with freshness metadata
+├── project-context.md      # Project goals and constraints
+├── design-system.md        # UI/UX rules
+├── repair-system.md        # Error knowledge base
+├── planning/           # Task queue and project plan (with complexity tagging)
+├── memory/             # Decisions and lessons (with supersedes links)
+├── index/              # Repo map and dependency graph (auto-regenerable)
+├── testing/            # Test plan and results
+├── checkpoints/        # Session log (append-only) + in-progress (singular, overwritten)
+└── summaries/          # Development history
 ```
 
-## Troubleshooting
-Common issues and solutions:
+## Getting Started
 
-1. **API Connection Problems:**
-   - Verify API keys in config.yaml
-   - Check service status pages
+1. Copy the `ai-system-kit/` directory into your project:
+   - `.ai-context.md` at project root
+   - `.ai-system/` with all subdirectories
 
-2. **Performance Issues:**
-   - Disable VS Code minimap
-   - Close unused browser tabs during intensive tasks
+2. Run the bootstrap command:
+   ```
+   Execute command: bootstrap-project.md
+   Directive: [describe your project — e.g., "Next.js + Node.js marketplace app"]
+   ```
 
-3. **Offline Work:**
-   - Ensure Ollama models are downloaded
-   - Configure Continue to use local fallback models
+3. Start your first development cycle:
+   ```
+   Execute command: dev-cycle.md
+   ```
+
+## Context Tiering
+
+The system uses four tiers to adapt to any context budget:
+
+| Tier | Token Budget | Files | When |
+|------|-------------|-------|------|
+| 1 — Always Read | ~1.5k | .ai-context.md, context-tiering.md, quality-gate.md, escalation-rules.md | Every session |
+| 2 — Task Scope | ~3k | task-queue.md, role file, system-architecture.md, repair-system.md | When task is known |
+| 3 — On Demand | ~5k | project-context.md, design-system.md, memory/, index/ | When domain is touched |
+| 4 — Reference | ~1.5k | architecture-history.md, test-plan.md, session-log.md | When explicitly needed |
+
+## Quality Gate
+
+Every command runs this checklist before declaring work complete:
+
+1. **Requirement match** — actual stated requirement, not reinterpretation
+2. **Generalization check** — works beyond the example case
+3. **Scope discipline** — only files relevant to the task
+4. **Architecture consistency** — matches documented structure
+5. **No unstated assumptions** — assumptions are logged, not baked in
+6. **Error-path completeness** — failure cases handled
+7. **Self-verification** — how you verified, not "should work"
+8. **No re-prompt debt** — resolve or explicitly flag follow-ups
+
+## Key Commands
+
+| Command | Purpose |
+|---------|---------|
+| `bootstrap-project.md` | Initialize .ai-system documentation |
+| `execute-feature.md` | Full feature pipeline (plan → implement → QA → doc) |
+| `dev-cycle.md` | Daily development loop |
+| `plan-feature.md` | Architecture impact analysis (no code) |
+| `refactor-codebase.md` | Structural improvement |
+| `fix-build.md` | Self-healing error diagnosis and fix |
+| `verify-work.md` | Standalone quality gate |
+| `sync-context.md` | Mid-work lightweight doc sync |
+| `resume-session.md` | Interruption recovery |
+| `cloud-session.md` | Async/unattended session protocol |
+| `update-ai-system.md` | Sprint-end deep sync |
+| `audit-drift.md` | Deep consistency check |
+
+## Integration
+
+The `.ai-system` kit works with any AI tool. The only requirement is that your AI tool reads `.ai-context.md` at session start.
+
+For example integration notes, see `integrations/examples/tool-integration.md` (non-normative, optional).
 
 ## License
-This setup uses free tiers of various services. Refer to each component's licensing:
-- Supermaven: Free for basic usage
-- Together AI: Free monthly credits
-- Groq: Free tier with rate limits
-- Ollama: MIT License
 
-For complete documentation, see:
-- [AI Workflow Setup Guide](ai-workflow-setup-guide.md)
-- [Personal Reference Guide](my-ai-workflow-reference.md)
+This system is provided as a reference architecture for AI-assisted development. Use, modify, and distribute freely.

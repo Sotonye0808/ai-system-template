@@ -1,6 +1,11 @@
 # Development History
 
-> **Overview:** Chronological log of completed development work. Each sprint ends with a summary entry. Agents add entries after completing tasks. Useful for understanding what has been built and when decisions were made.
+> **Metadata**
+> - last-updated-by: (set on first entry)
+> - last-verified-against-code: (set after each entry)
+> - staleness-policy: historical entries do not go stale
+
+> **Overview:** Chronological log of completed development work. Each sprint ends with a summary entry. Agents add entries after completing tasks. Useful for understanding what has been built, when decisions were made, and what patterns have emerged.
 
 ---
 
@@ -10,7 +15,7 @@
 ## [Date] — [Sprint or Session Title]
 
 **Summary:**
-[2–4 sentence overview of what was accomplished]
+[2-4 sentence overview of what was accomplished]
 
 **Completed:**
 - [task 1]
