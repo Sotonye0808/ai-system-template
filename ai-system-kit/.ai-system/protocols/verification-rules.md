@@ -45,3 +45,11 @@
 - If no test suite exists, run the linter and type checker
 - If neither exists, manually trace the execution path for one success and one failure case
 - Document which verification was performed and the result
+
+### Pattern Adherence
+- Grep for repeated magic values across files that should be config-driven
+- Check whether new types/interfaces duplicate an existing shape defined elsewhere (grep for the concept name)
+- Check whether new UI elements could have reused an existing universal component from the component library
+- Verify that third-party SDK calls use a wrapper/adapter layer, not direct imports
+- For every config-driven value, check that a fallback default is documented
+- Verify that any new dependency or wrapper creation is logged in `memory/project-decisions.md`

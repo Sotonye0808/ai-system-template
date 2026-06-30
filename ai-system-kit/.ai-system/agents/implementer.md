@@ -14,6 +14,7 @@
 - `planning/task-queue.md` — the specific task to implement
 - `system-architecture.md` — layer rules and module boundaries
 - `design-system.md` — UI patterns if frontend work
+- `standards/engineering-principles.md` — coding standards to follow
 - `repair-system.md` — known pitfalls to avoid
 - `index/dependency-graph.md` — impact awareness
 - Any applicable role file (planner output, architect plan)
@@ -29,6 +30,8 @@
 
 - Silent architecture changes — if the architecture does not support the task, flag it to the Architect role first
 - Adding new external dependencies without flagging for review (per escalation rules)
+- Hardcoding a value that should be config-driven without a documented fallback
+- Duplicating an existing type/interface instead of importing it
 - Touching files outside the task scope without written justification
 - Skipping tests because "it's a simple change"
 - Leaving debug code, console.logs, or TODOs in committed code

@@ -12,6 +12,7 @@
 ## Inputs
 
 - `system-architecture.md`
+- `standards/engineering-principles.md`
 - `index/repo-map.md`
 - `index/dependency-graph.md`
 - `memory/project-decisions.md`
@@ -37,4 +38,5 @@
 - Every architecture change must state: what changed, why, and what alternatives were considered
 - Architecture must be derivable — another agent reading system-architecture.md should be able to reconstruct the module structure
 - Changes must be compatible with existing layer rules (presentation → service → data)
+- Proposed architecture must align with `standards/engineering-principles.md` (config-driven, modular, wrapper-isolated third-party dependencies)
 - No circular dependencies may be introduced

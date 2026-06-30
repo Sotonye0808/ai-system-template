@@ -75,7 +75,7 @@ The AI will analyze your codebase and populate all `.ai-system` files with proje
 ### Key Concepts
 
 - **Context Tiering:** A "always read" core (~1.5k tokens) plus progressive disclosure — small models get what they need, large models don't waste context
-- **Quality Gate:** 8 mandatory checks (requirement match, generalization, scope, architecture, assumptions, error paths, verification, re-prompt debt)
+- **Quality Gate:** 9 mandatory checks (requirement match, generalization, scope, architecture, assumptions, error paths, verification, re-prompt debt, pattern adherence)
 - **Interruption Safety:** `checkpoints/in-progress.md` tracks half-done work; `resume-session.md` recovers from any interruption
 - **Freshness Metadata:** Every doc tracks when it was last verified against the actual code, so agents know when to re-derive vs. trust
 

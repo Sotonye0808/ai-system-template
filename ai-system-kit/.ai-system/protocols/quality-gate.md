@@ -63,6 +63,15 @@ Before ending the turn, ask yourself: "Is there an obvious follow-up question or
 - Resolve it now if it is small
 - Or flag it explicitly in the session log so it is not silently deferred
 
+### 9. Pattern Adherence
+
+Does the implementation follow `standards/engineering-principles.md`?
+- Are values that should be config-driven actually configurable (not hardcoded)?
+- Are existing type/interface/styling definitions reused rather than duplicated?
+- Is modularization appropriate — is each module responsible for one thing?
+- Are third-party SDKs wrapped behind a stable internal interface?
+- Is there a documented fallback for every config-driven value?
+
 ---
 
 ## Rollback Guidance

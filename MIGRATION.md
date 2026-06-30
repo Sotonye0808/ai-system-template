@@ -13,7 +13,7 @@
 | Protocol | Implicit — spread across general-instructions.md | Explicit — `protocols/` directory with entry, tiering, quality gate, escalation, verification |
 | Commands | 8 commands, no pipeline | 12 commands, including execute-feature pipeline, resume-session, cloud-session, verify-work, sync-context, audit-drift |
 | Interruption safety | None — lost state on reset | `checkpoints/in-progress.md` + `resume-session.md` |
-| Quality gate | None (only reactive self-heal on test failures) | Mandatory 8-criterion QA gate in `protocols/quality-gate.md` |
+| Quality gate | None (only reactive self-heal on test failures) | Mandatory 9-criterion QA gate in `protocols/quality-gate.md` (+ engineering principles check) |
 | Freshness metadata | None | Every file has `last-updated-by`, `last-verified-against-code`, `staleness-policy` |
 | Bootstrap | Two overlapping files (agent-bootstrap.md + bootstrap-project.md) | Single `commands/bootstrap-project.md` |
 | MCP/tool awareness | None | Tool-discovery-first in entry protocol |
@@ -39,7 +39,7 @@
 |------|---------|
 | `protocols/entry-protocol.md` | Mandatory session start procedure |
 | `protocols/context-tiering.md` | Progressive disclosure rules by context budget |
-| `protocols/quality-gate.md` | 8-criterion anti-slop QA checklist |
+| `protocols/quality-gate.md` | 9-criterion anti-slop QA checklist |
 | `protocols/escalation-rules.md` | When to ask vs. proceed |
 | `protocols/verification-rules.md` | How to verify each QA criterion |
 | `agents/planner.md` | Role: planning only |
@@ -56,6 +56,7 @@
 | `commands/audit-drift.md` | Deep consistency check |
 | `checkpoints/in-progress.md` | Singular, overwritten in-progress marker |
 | `integrations/examples/tool-integration.md` | Optional, non-normative integration example |
+| `standards/engineering-principles.md` | Engineering doctrine — config-driven, modular, fallback-safe coding standards |
 | `MIGRATION.md` | This file |
 
 ---
@@ -106,6 +107,6 @@
 
 - **Session start is different.** In v1, agents read `general-instructions.md` first. In v2, they read `protocols/entry-protocol.md` which directs them to use the tiering protocol.
 - **Roles are function-based.** Agents must now self-identify which role they are acting in (Planner, Architect, Implementer, etc.) based on the task, not based on which tool they are running in.
-- **Quality gate is mandatory.** Before marking any work complete, run the QA checklist. The old "self-heal on test failure" model is replaced by "verify before declaring done."
+- **Quality gate is mandatory.** Before marking any work complete, run the QA checklist (now 9 criteria, not 8 — "Pattern Adherence" was added in v2.1). The old "self-heal on test failure" model is replaced by "verify before declaring done."
 - **Interruption recovery.** If a session is interrupted, the next session must run `resume-session.md` before anything else.
 - **Commands have contracts.** Every command file now has a header declaring its guarantees, limitations, and required inputs.

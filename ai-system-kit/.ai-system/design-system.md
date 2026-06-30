@@ -5,7 +5,7 @@
 > - last-verified-against-code: (set after visual audit)
 > - staleness-policy: re-verify if UI components or styling dependencies change
 
-> **Overview:** Visual language, component patterns, and UX principles. Agents building UI must read this before writing any frontend code.
+> **Overview:** Visual language, component patterns, and UX principles. Agents building UI must read this before writing any frontend code. The colour, typography, and spacing tables below are the **single source of truth** for design tokens (per `standards/engineering-principles.md` §5) — components must consume these tokens rather than redeclaring values.
 
 ---
 

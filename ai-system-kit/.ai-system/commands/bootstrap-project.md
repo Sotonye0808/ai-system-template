@@ -45,6 +45,7 @@ Directive: This is greenfield — suggest an ideal architecture for a REST API
 2. **For each file in `.ai-system/`**, produce project-specific content:
    - `.ai-context.md` — project overview with actual stack, key modules
    - `protocols/` — populate freshness metadata (these files are pre-written, just update the metadata header)
+   - `standards/engineering-principles.md` — stamp the metadata header (static doctrine file, no project-specific content needed)
    - `system-architecture.md` — architecture diagram, module breakdown, data flow, config points
    - `project-context.md` — goals, users, constraints, tech decisions
    - `design-system.md` — detected UI patterns or templates to fill

@@ -31,6 +31,7 @@ Add these when a specific task is identified:
 | `planning/task-queue.md` | ~500 | Always when starting a task |
 | `agents/planner.md` or relevant role file | ~800 | Match to your current role |
 | `system-architecture.md` | ~1000 | Before designing or changing structure |
+| `standards/engineering-principles.md` | ~800 | Before most implementation work — sets coding standards |
 | `repair-system.md` | ~700 | If debugging or working near known problem areas |
 
 ---
@@ -73,3 +74,15 @@ Load these only when the task directly touches their domain:
 - **Small-context / cheap models**: read only Tier 1. Use tool-based discovery for everything else (live git log, file search, test runner output). Accept that you'll operate with less cached knowledge and rely on ground-truth tools more.
 - **Large-context models** (100k+ tokens): read Tier 1 + Tier 2 proactively. Load Tier 3 as needed during the session. Use progressive disclosure: start with less, add more if the task requires it.
 - **All models**: Tier 4 files are never read preemptively. Load them only when a specific action requires them.
+
+---
+
+## Staleness Cadence
+
+If a file's `last-verified-against-code` metadata is missing, clearly outdated relative to recent git activity, or exceeds the file's `staleness-policy`, the agent should:
+
+1. **Not block** — stale docs are not a reason to stop work.
+2. **Note the staleness** in session context (internal note, not necessarily written to a file).
+3. **Trigger `sync-context.md` proactively** rather than waiting for a scheduled `audit-drift` run. This keeps context fresh during active sessions without requiring a separate command invocation.
+
+This rule applies to all tiers equally: even Tier 1 files should be suspect if their freshness metadata is stale relative to recent architecture-affecting commits.

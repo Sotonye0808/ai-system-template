@@ -39,23 +39,27 @@ Directive: Next.js hydration mismatch on the dashboard page
 
 ## Execution
 
-1. Read `repair-system.md` for known patterns matching the error.
+1. **Write in-progress.md.** Record the error being diagnosed, steps planned, and files expected to touch.
 
-2. **Diagnose** — trace the actual execution path. Do not guess. Use available tools (test runner, linter, debug output) to pinpoint root cause.
+2. Read `repair-system.md` for known patterns matching the error.
 
-3. **Fix** — implement the minimal change. Do not refactor unrelated code.
+3. **Diagnose** — trace the actual execution path. Do not guess. Use available tools (test runner, linter, debug output) to pinpoint root cause.
 
-4. **Verify** — re-run tests or build to confirm resolution.
+4. **Fix** — implement the minimal change. Do not refactor unrelated code.
 
-5. **Log** — update `repair-system.md` with:
+5. **Verify** — re-run tests or build to confirm resolution.
+
+6. **Log** — update `repair-system.md` with:
    - Error description and symptom
    - Root cause
    - Fix applied
    - Prevention strategy
    - Files affected
 
-6. **Update** — `testing/test-results.md`, `checkpoints/session-log.md`.
+7. **Update** — `testing/test-results.md`, `checkpoints/session-log.md`.
 
-7. **If the error is complex** — break into sub-problems, solve each one, log each fix.
+8. **If the error is complex** — break into sub-problems, solve each one, log each fix.
 
-8. **If the fix introduces assumptions** — log them in `memory/project-decisions.md`.
+9. **If the fix introduces assumptions** — log them in `memory/project-decisions.md`.
+
+10. **Clear in-progress.md** on clean completion.

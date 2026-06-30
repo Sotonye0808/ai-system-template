@@ -79,6 +79,7 @@ Before declaring work done, verify:
 6. **Error paths** — failure cases handled?
 7. **Self-verification** — how did you verify (not "should work")?
 8. **No re-prompt debt** — any obvious follow-ups resolved or flagged?
+9. **Pattern Adherence** — follows engineering principles (config-driven, no duplicate types)?
 
 ---
 

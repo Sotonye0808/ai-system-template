@@ -38,7 +38,9 @@ Directive: Verify repair-system entries against current code
 
 ## Execution
 
-1. **Architecture drift check.** Compare `system-architecture.md` module claims against actual folder structure and module boundaries. Are all listed modules still present? Are there modules in the code that the doc does not mention?
+1. **Write in-progress.md.** Record that an audit is in progress and which areas are being checked.
+
+2. **Architecture drift check.** Compare `system-architecture.md` module claims against actual folder structure and module boundaries. Are all listed modules still present? Are there modules in the code that the doc does not mention?
 
 2. **Dependency drift check.** Compare `index/dependency-graph.md` against actual imports/dependencies. Are all listed dependencies still accurate? Are there new dependencies not documented?
 
@@ -61,5 +63,7 @@ Directive: Verify repair-system entries against current code
    |------|--------------|--------|--------|
 
    ### Clean Docs
-   [list of docs that passed audit]
-   ```
+    [list of docs that passed audit]
+    ```
+
+7. **Clear in-progress.md** after the report is produced.

@@ -13,7 +13,7 @@
 
 | Guarantees | Does NOT |
 |------------|----------|
-| Evaluates work against all 8 QA criteria | Does not fix issues found — flags them |
+| Evaluates work against all 9 QA criteria | Does not fix issues found — flags them |
 | Produces a pass / conditional pass / fail result | Does not skip criteria to produce a "pass" result |
 | Identifies specific issues with locations and severity | Does not make assumptions about specific AI tools |
 | Recommends rollback or patch-forward for each failure | Does not modify code |
@@ -49,6 +49,7 @@ Directive: Verify the last commit for architecture consistency only
    - **Error-path completeness** — check 3 failure modes per function
    - **Self-verification** — check test results, manual trace
    - **No re-prompt debt** — check if follow-ups are needed
+   - **Pattern Adherence** — check against standards/engineering-principles.md
 
 3. Produce a report:
    - **Result**: Pass / Conditional Pass / Fail

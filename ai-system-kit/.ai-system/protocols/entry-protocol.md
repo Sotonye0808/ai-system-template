@@ -44,6 +44,7 @@
 | QA requirements | `protocols/quality-gate.md` |
 | When to ask vs. proceed | `protocols/escalation-rules.md` |
 | How to verify work | `protocols/verification-rules.md` |
+| Engineering standards / how to write code | `standards/engineering-principles.md` |
 | Current task | `planning/task-queue.md` |
 | System structure | `system-architecture.md` |
 | Known errors | `repair-system.md` |

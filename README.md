@@ -11,6 +11,7 @@ A vendor-neutral, model-agnostic framework for AI-assisted software development.
 - **Closed-loop quality.** Every command runs through a mandatory QA gate before declaring work complete. No "should work" handoffs.
 - **Interruption-safe.** Checkpoint tracking means any session can be resumed after a crash, reset, or context switch.
 - **File-based state.** No external database — everything is Markdown with structured metadata, works in any repo with any toolchain.
+- **Pattern discipline.** Config-driven, fallback-safe, single-source-of-truth engineering standards are enforced through the quality gate, not left as unstated convention.
 
 ## Directory Contract
 
@@ -19,6 +20,7 @@ A vendor-neutral, model-agnostic framework for AI-assisted software development.
 ├── protocols/          # How any agent behaves (entry, tiering, QA, escalation, verification)
 ├── agents/             # Role definitions (function-based: Planner, Architect, Implementer, etc.)
 ├── commands/           # Reusable command pipelines (execute-feature, dev-cycle, fix-build, etc.)
+├── standards/          # Engineering principles — how code should be written and structured
 ├── system-architecture.md  # Structural docs with freshness metadata
 ├── project-context.md      # Project goals and constraints
 ├── design-system.md        # UI/UX rules
@@ -71,6 +73,7 @@ Every command runs this checklist before declaring work complete:
 6. **Error-path completeness** — failure cases handled
 7. **Self-verification** — how you verified, not "should work"
 8. **No re-prompt debt** — resolve or explicitly flag follow-ups
+9. **Pattern Adherence** — follows engineering principles (config-driven, no duplicate types, appropriate modularization)
 
 ## Key Commands
 

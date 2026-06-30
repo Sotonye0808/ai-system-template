@@ -63,6 +63,8 @@ Client (Browser / Mobile)
 |-----------|---------|----------|---------|
 | [key] | [what it controls] | [.env / config file] | [value] |
 
+All config points listed here should follow the fallback discipline from `standards/engineering-principles.md` §1 and §3 — every config-driven value must have a documented, safe fallback so the system degrades gracefully if the value is missing or malformed.
+
 ---
 
 ## Tech Stack
