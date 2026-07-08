@@ -1,12 +1,12 @@
 # AI-Assisted Development — Setup Guide
 
-## A Complete Guide to the `.ai-system` Framework
+## A Complete Guide to the `ai-system` Framework
 
 ---
 
 ## What This Guide Sets Up
 
-This guide walks you through integrating the `.ai-system` AI-assisted development framework into your project. It works with any AI coding tool — the framework is entirely vendor-neutral.
+This guide walks you through integrating the `ai-system` AI-assisted development framework into your project. It works with any AI coding tool — the framework is entirely vendor-neutral.
 
 When you're done, you'll have:
 
@@ -30,21 +30,21 @@ When you're done, you'll have:
 
 ### Requirements
 
-| Requirement | Details |
-|---|---|
-| A project repository | Any language, any framework |
-| An AI coding tool | Any tool that can read Markdown files and follow instructions |
-| `.ai-system` kit | Copy from `ai-system-kit/` in this repo |
+| Requirement          | Details                                                       |
+| -------------------- | ------------------------------------------------------------- |
+| A project repository | Any language, any framework                                   |
+| An AI coding tool    | Any tool that can read Markdown files and follow instructions |
+| `ai-system` kit      | Copy from `ai-system-kit/` in this repo                       |
 
 ---
 
-## Step 1 — Copy the `.ai-system` Kit
+## Step 1 — Copy the `ai-system` Kit
 
 Copy the entire kit into your project root:
 
 ```powershell
-Copy-Item -Recurse -Path 'path\to\ai-system-kit\.ai-system' -Destination '.\' -Force
-Copy-Item 'path\to\ai-system-kit\.ai-context.md' '.\.ai-context.md' -Force
+Copy-Item -Recurse -Path 'path\to\ai-system-kit\ai-system' -Destination '.\' -Force
+Copy-Item 'path\to\ai-system-kit\ai-context.md' '.\ai-context.md' -Force
 ```
 
 ---
@@ -58,7 +58,7 @@ Execute command: bootstrap-project.md
 Directive: [describe your project — e.g., "Next.js + Node.js marketplace app"]
 ```
 
-The AI will analyze your codebase and populate all `.ai-system` files with project-specific content.
+The AI will analyze your codebase and populate all `ai-system` files with project-specific content.
 
 ---
 
@@ -66,7 +66,7 @@ The AI will analyze your codebase and populate all `.ai-system` files with proje
 
 ### How It Works
 
-1. **Every session starts** by reading `.ai-context.md` → `protocols/entry-protocol.md`
+1. **Every session starts** by reading `ai-context.md` → `protocols/entry-protocol.md`
 2. **The entry protocol** tells the agent which files to read based on context budget (context-tiering)
 3. **The agent picks a role** — Planner, Architect, Implementer, Reviewer, Tester/QA, or Historian — based on the task
 4. **Commands are executed** via the `Execute command: [file].md` pattern
@@ -88,7 +88,7 @@ The AI will analyze your codebase and populate all `.ai-system` files with proje
 1. Open your project
 2. In your AI tool, start with:
    ```
-   Read .ai-context.md before responding.
+   Read ai-context.md before responding.
    ```
 3. The agent follows the entry protocol to orient itself
 4. Run the daily cycle:
@@ -98,27 +98,27 @@ The AI will analyze your codebase and populate all `.ai-system` files with proje
 
 ### Common Tasks
 
-| What You Want to Do | How to Do It |
-|---|---|
-| Plan a new feature before writing code | `Execute command: plan-feature.md` + `Directive: describe your feature` |
-| Implement a full feature end-to-end | `Execute command: execute-feature.md` + `Directive: feature description` |
-| Run daily development | `Execute command: dev-cycle.md` |
-| Fix a build or test failure | `Execute command: fix-build.md` + `Directive: paste the error` |
-| Verify current work quality | `Execute command: verify-work.md` |
-| Sync docs with code mid-sprint | `Execute command: sync-context.md` |
-| Check for architecture drift | `Execute command: audit-drift.md` |
-| Resume after interruption | `Execute command: resume-session.md` |
+| What You Want to Do                    | How to Do It                                                             |
+| -------------------------------------- | ------------------------------------------------------------------------ |
+| Plan a new feature before writing code | `Execute command: plan-feature.md` + `Directive: describe your feature`  |
+| Implement a full feature end-to-end    | `Execute command: execute-feature.md` + `Directive: feature description` |
+| Run daily development                  | `Execute command: dev-cycle.md`                                          |
+| Fix a build or test failure            | `Execute command: fix-build.md` + `Directive: paste the error`           |
+| Verify current work quality            | `Execute command: verify-work.md`                                        |
+| Sync docs with code mid-sprint         | `Execute command: sync-context.md`                                       |
+| Check for architecture drift           | `Execute command: audit-drift.md`                                        |
+| Resume after interruption              | `Execute command: resume-session.md`                                     |
 
 ---
 
 ## Troubleshooting
 
-| Problem | Solution |
-|---|---|
-| Agent ignores the entry protocol | Prepend: `Read protocols/entry-protocol.md before responding` |
-| Agent produces overfit code | Run `verify-work.md` with `Directive: Focus on generalization check` |
-| Agent modifies files outside scope | Check scope discipline criterion in quality gate — revert and re-run |
-| Docs get stale during long sessions | Run `sync-context.md` at regular intervals |
-| Session interrupted mid-work | Run `resume-session.md` — checkpoint state is preserved |
-| Architecture drift detected | Run `audit-drift.md` to generate a discrepancy report |
-| Bootstrap generates generic content | Add a detailed directive describing your stack and goals |
+| Problem                             | Solution                                                             |
+| ----------------------------------- | -------------------------------------------------------------------- |
+| Agent ignores the entry protocol    | Prepend: `Read protocols/entry-protocol.md before responding`        |
+| Agent produces overfit code         | Run `verify-work.md` with `Directive: Focus on generalization check` |
+| Agent modifies files outside scope  | Check scope discipline criterion in quality gate — revert and re-run |
+| Docs get stale during long sessions | Run `sync-context.md` at regular intervals                           |
+| Session interrupted mid-work        | Run `resume-session.md` — checkpoint state is preserved              |
+| Architecture drift detected         | Run `audit-drift.md` to generate a discrepancy report                |
+| Bootstrap generates generic content | Add a detailed directive describing your stack and goals             |

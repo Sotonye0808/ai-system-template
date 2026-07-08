@@ -1,6 +1,7 @@
 # Development Checkpoints — Session Log
 
 > **Metadata**
+>
 > - last-updated-by: (set on first entry)
 > - last-verified-against-code: (set after each session)
 > - staleness-policy: append-only — never modify past entries
@@ -39,10 +40,11 @@
 ## Session 1 — [DATE]
 
 **Completed:**
-Initial .ai-system setup and project bootstrap
+Initial ai-system setup and project bootstrap
 
 **Files Modified:**
-- .ai-system/ (entire directory created)
+
+- ai-system/ (entire directory created)
 
 **Next Task:**
 Run dev-cycle.md to begin first development task from task-queue.md

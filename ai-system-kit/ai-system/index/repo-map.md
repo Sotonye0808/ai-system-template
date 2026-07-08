@@ -1,6 +1,7 @@
 # Repository Map
 
 > **Metadata**
+>
 > - last-updated-by: (set on first update)
 > - last-verified-against-code: (set after map review)
 > - staleness-policy: auto-regenerable — can be derived from `Get-ChildItem -Recurse` or `tree` command. Manual content only where intent cannot be derived from structure.
@@ -33,24 +34,24 @@ project-root/
 ├── config/                 → Configuration files
 ├── scripts/                → Build and utility scripts
 ├── tests/                  → Test suites
-└── .ai-system/             → AI development system
+└── ai-system/             → AI development system
 ```
 
 ---
 
 ## Directory Descriptions
 
-| Directory | Purpose | Key Files |
-|-----------|---------|-----------|
-| [dir] | [what it contains] | [important files] |
+| Directory | Purpose            | Key Files         |
+| --------- | ------------------ | ----------------- |
+| [dir]     | [what it contains] | [important files] |
 
 ---
 
 ## Entry Points
 
-| Purpose | File |
-|---------|------|
-| Frontend dev server | [e.g. src/pages/_app.tsx] |
-| Backend server | [e.g. server/index.js] |
-| Config loading | [e.g. config/index.js] |
-| Environment validation | [e.g. config/env.js] |
+| Purpose                | File                      |
+| ---------------------- | ------------------------- |
+| Frontend dev server    | [e.g. src/pages/_app.tsx] |
+| Backend server         | [e.g. server/index.js]    |
+| Config loading         | [e.g. config/index.js]    |
+| Environment validation | [e.g. config/env.js]      |

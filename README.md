@@ -1,4 +1,4 @@
-# AI-Assisted Development System (`.ai-system`)
+# AI-Assisted Development System (`ai-system`)
 
 ## Overview
 
@@ -16,7 +16,7 @@ A vendor-neutral, model-agnostic framework for AI-assisted software development.
 ## Directory Contract
 
 ```
-.ai-system/
+ai-system/
 ├── protocols/          # How any agent behaves (entry, tiering, QA, escalation, verification)
 ├── agents/             # Role definitions (function-based: Planner, Architect, Implementer, etc.)
 ├── commands/           # Reusable command pipelines (execute-feature, dev-cycle, fix-build, etc.)
@@ -36,10 +36,11 @@ A vendor-neutral, model-agnostic framework for AI-assisted software development.
 ## Getting Started
 
 1. Copy the `ai-system-kit/` directory into your project:
-   - `.ai-context.md` at project root
-   - `.ai-system/` with all subdirectories
+   - `ai-context.md` at project root
+   - `ai-system/` with all subdirectories
 
 2. Run the bootstrap command:
+
    ```
    Execute command: bootstrap-project.md
    Directive: [describe your project — e.g., "Next.js + Node.js marketplace app"]
@@ -54,12 +55,12 @@ A vendor-neutral, model-agnostic framework for AI-assisted software development.
 
 The system uses four tiers to adapt to any context budget:
 
-| Tier | Token Budget | Files | When |
-|------|-------------|-------|------|
-| 1 — Always Read | ~1.5k | .ai-context.md, context-tiering.md, quality-gate.md, escalation-rules.md | Every session |
-| 2 — Task Scope | ~3k | task-queue.md, role file, system-architecture.md, repair-system.md | When task is known |
-| 3 — On Demand | ~5k | project-context.md, design-system.md, memory/, index/ | When domain is touched |
-| 4 — Reference | ~1.5k | architecture-history.md, test-plan.md, session-log.md | When explicitly needed |
+| Tier            | Token Budget | Files                                                                   | When                   |
+| --------------- | ------------ | ----------------------------------------------------------------------- | ---------------------- |
+| 1 — Always Read | ~1.5k        | ai-context.md, context-tiering.md, quality-gate.md, escalation-rules.md | Every session          |
+| 2 — Task Scope  | ~3k          | task-queue.md, role file, system-architecture.md, repair-system.md      | When task is known     |
+| 3 — On Demand   | ~5k          | project-context.md, design-system.md, memory/, index/                   | When domain is touched |
+| 4 — Reference   | ~1.5k        | architecture-history.md, test-plan.md, session-log.md                   | When explicitly needed |
 
 ## Quality Gate
 
@@ -77,24 +78,24 @@ Every command runs this checklist before declaring work complete:
 
 ## Key Commands
 
-| Command | Purpose |
-|---------|---------|
-| `bootstrap-project.md` | Initialize .ai-system documentation |
-| `execute-feature.md` | Full feature pipeline (plan → implement → QA → doc) |
-| `dev-cycle.md` | Daily development loop |
-| `plan-feature.md` | Architecture impact analysis (no code) |
-| `refactor-codebase.md` | Structural improvement |
-| `fix-build.md` | Self-healing error diagnosis and fix |
-| `verify-work.md` | Standalone quality gate |
-| `sync-context.md` | Mid-work lightweight doc sync |
-| `resume-session.md` | Interruption recovery |
-| `cloud-session.md` | Async/unattended session protocol |
-| `update-ai-system.md` | Sprint-end deep sync |
-| `audit-drift.md` | Deep consistency check |
+| Command                | Purpose                                             |
+| ---------------------- | --------------------------------------------------- |
+| `bootstrap-project.md` | Initialize ai-system documentation                  |
+| `execute-feature.md`   | Full feature pipeline (plan → implement → QA → doc) |
+| `dev-cycle.md`         | Daily development loop                              |
+| `plan-feature.md`      | Architecture impact analysis (no code)              |
+| `refactor-codebase.md` | Structural improvement                              |
+| `fix-build.md`         | Self-healing error diagnosis and fix                |
+| `verify-work.md`       | Standalone quality gate                             |
+| `sync-context.md`      | Mid-work lightweight doc sync                       |
+| `resume-session.md`    | Interruption recovery                               |
+| `cloud-session.md`     | Async/unattended session protocol                   |
+| `update-ai-system.md`  | Sprint-end deep sync                                |
+| `audit-drift.md`       | Deep consistency check                              |
 
 ## Integration
 
-The `.ai-system` kit works with any AI tool. The only requirement is that your AI tool reads `.ai-context.md` at session start.
+The `ai-system` kit works with any AI tool. The only requirement is that your AI tool reads `ai-context.md` at session start.
 
 For example integration notes, see `integrations/examples/tool-integration.md` (non-normative, optional).
 
